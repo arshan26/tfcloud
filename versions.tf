@@ -1,13 +1,13 @@
-terraform {
+# //terraform {
 
-  cloud {
-    organization = "CLT"
+#   cloud {
+#     organization = "CLT"
 
-    workspaces {
-      name = "tfcloud1"
-    }
-  }
-}
+#     workspaces {
+#       name = "tfcloud1"
+#     }
+#   }
+# }
 
 #   # required_providers {
 #   #   aws = {
