@@ -45,7 +45,8 @@ resource "aws_instance" "foo" {
   ami           = "ami-05fa00d4c63e32376" 
   instance_type = var.instance_type
   # region = "us-east-1"
-  security_groups = aws_security_group.SG.id
+  security_groups = [aws_security_group.SG.id,]
+  user_data = file("install.sh")
 
   tags = {
     Name = "instance2"
