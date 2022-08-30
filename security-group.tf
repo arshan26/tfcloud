@@ -6,6 +6,7 @@ resource "aws_security_group" "SG" {
   name        = "SG"
   description = "Allow TLS inbound traffic"
   vpc_id      = aws_vpc.my_vpc.id
+  instance_id = aws_instance.foo.id
 
   ingress {
     description = "allow 22 port"

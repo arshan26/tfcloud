@@ -47,6 +47,7 @@ resource "aws_instance" "foo" {
   # region = "us-east-1"
   security_groups = [aws_security_group.SG.id,]
   user_data = file("install.sh")
+  subnet_id = aws_subnet.my_subnet.id
 
   tags = {
     Name = "instance2"
