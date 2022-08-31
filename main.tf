@@ -53,7 +53,7 @@ resource "aws_instance" "foo1" {
   subnet_id = aws_subnet.my_subnet.id
 
   network_interface {
-     network_interface_id = aws_network_interface.foo1.id
+     network_interface_id = aws_network_interface.foo.id
      device_index         = 0
   }
 
