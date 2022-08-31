@@ -52,8 +52,28 @@ resource "aws_instance" "foo" {
   user_data = file("install.sh")
   subnet_id = aws_subnet.my_subnet.id
 
+  network_interface {
+     network_interface_id = aws_network_interface.foo.id
+     device_index         = 0
+  }
+
   tags = {
     Name = "instance2"
         }
 
 }
+
+resource "aws_s3_bucket" "b" {
+  bucket = "my-tf-test-bucket"
+
+  tags = {
+    Name        = "My bucket"
+    Environment = "Dev"
+  }
+}
+
+resource "aws_s3_bucket_acl" "example" {
+  bucket = aws_s3_bucket.b.id
+  acl    = "private"
+}
+
