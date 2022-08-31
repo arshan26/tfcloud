@@ -1,5 +1,5 @@
 output "instance_type" {
-  value = aws_instance.foo.instance_type
+  value = aws_instance.foo1.instance_type
   description = "instance type"
 }
 

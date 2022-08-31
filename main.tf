@@ -44,7 +44,7 @@ resource "aws_network_interface" "foo" {
   }
 }
 
-resource "aws_instance" "foo" {
+resource "aws_instance" "foo1" {
   ami           = "ami-05fa00d4c63e32376" 
   instance_type = var.instance_type
   # region = "us-east-1"
@@ -53,7 +53,7 @@ resource "aws_instance" "foo" {
   subnet_id = aws_subnet.my_subnet.id
 
   network_interface {
-     network_interface_id = aws_network_interface.foo.id
+     network_interface_id = aws_network_interface.foo1.id
      device_index         = 0
   }
 

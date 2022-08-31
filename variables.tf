@@ -6,5 +6,5 @@ variable "instance_type" {
 
 output "instance_public_ip" {
   description = "Public IP address of the EC2 instance"
-  value       = aws_instance.foo.public_ip
+  value       = aws_instance.foo1.public_ip
 }
